@@ -187,6 +187,7 @@ public class DoubleLinkedList {
         newNode.prior = null;
         // 2.1.4 将新节点的 next 指针指向 null
         newNode.next = null;
+
         // 2.2 将新节点插入到链表中
         // 2.2.1 保存第 i 个节点的前驱节点，即第 i-1 个节点
         DLNode temp = node.prior;
@@ -229,6 +230,7 @@ public class DoubleLinkedList {
         newNode.prior = null;
         // 2.1.4 将新节点的 next 指针指向 null
         newNode.next = null;
+
         // 2.2 将新节点附加到链表的尾部
         // 2.2.1 将新节点的 prior 指针指向原链表最后一个节点
         newNode.prior = lastNode;
@@ -300,6 +302,9 @@ public class DoubleLinkedList {
         return count;
     }
 
+    /**
+     * 清空双链表
+     */
     public void clear() {
         // 链表的第一个节点
         DLNode node = list.next;
