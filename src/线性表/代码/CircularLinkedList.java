@@ -267,7 +267,7 @@ public class CircularLinkedList {
     }
 
     /**
-     * 删除链表的尾节点
+     * 删除链表的第一个节点
      *
      * @return 被删除的节点
      */
