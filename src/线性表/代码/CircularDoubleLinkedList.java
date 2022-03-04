@@ -117,7 +117,7 @@ public class CircularDoubleLinkedList {
      */
     public void insert(int i, int ele) throws Exception {
         // 0.参数校验
-        if (i < 0 || i > size()) {
+        if (i < 1 || i > size()) {
             throw new Exception("不存在第 " + i + " 个节点！");
         }
 
