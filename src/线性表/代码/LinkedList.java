@@ -91,6 +91,51 @@ public class LinkedList {
     }
 
     /**
+     * 查找单链表指定位置的结点
+     *
+     * @param i 序号，从 1 开始
+     * @return 如果成功查找到结点则返回，否则返回 null
+     */
+    public LNode findByNum(int i) {
+        // 0.参数校验
+        if (i < 1 || i > size()) {
+            return null;
+        }
+
+        // 1.查找链表的第 i 个节点
+        // 变量，记录链表结点，初始从链表的头结点开始
+        LNode node = list;
+        // 循环遍历 i 次，node 刚好走到第 i 个结点的位置
+        while (i > 0) {
+            node = node.next;
+            i--;
+        }
+        return node;
+    }
+
+    /**
+     * 查找单链表中等于指定值的结点
+     *
+     * @param ele 指定值
+     * @return 如果成功查找到结点则返回，否则返回 null
+     */
+    public LNode findByEle(int ele) {
+        // 变量，记录单链表结点，初始为链表的开始结点
+        LNode node = list.next;
+        // 从头到尾扫描单链表，比较值
+        while (node != null) {
+            // 如果找到值为 ele 的结点则返回
+            if (node.data == ele) {
+                return node;
+            }
+            // 否则继续下一个结点
+            node = node.next;
+        }
+        // 如果单链表中不存在值为 ele 的结点则返回 null
+        return null;
+    }
+
+    /**
      * 在单链表的第 i 个结点（从 1 开始）前插入一个结点
      *
      * @param i   节点序号，从 1 开始

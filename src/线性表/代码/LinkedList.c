@@ -101,6 +101,49 @@ LNode *createByTail(LNode **list, int nums[], int n) {
 }
 
 /**
+ * 发现单链表中第 i 个结点
+ * @param list 单链表
+ * @param i 指定序号位置，从 1 开始
+ * @return 如果第 i 个结点存在则返回，否则返回 NULL
+ */
+LNode *findByNum(LNode *list, int i) {
+    // 0.参数校验，序号 i 必须在 [1, length] 范围内
+    if (i < 1 || i > size(list)) {
+        return NULL;
+    }
+
+    // 1.从头到尾扫描单链表，找到第 i 个结点
+    LNode *node = list;// 注意，从头结点开始
+    while (i > 0) {
+        node = node->next;
+        i--;
+    }
+    return node;
+}
+
+/**
+ * 查找单链表中等于指定值 ele 的结点
+ * @param list 单链表
+ * @param ele 指定值
+ * @return 如果单链表中有等于值 ele 的结点则返回该结点，否则返回 NULL
+ */
+LNode *findByEle(LNode *list, int ele) {
+    // 变量，记录链表结点，初始为链表第一个结点
+    LNode *node = list->next;
+    // 从头到尾扫描单链表所有结点，判断结点值
+    while (node != NULL) {
+        // 如果当前结点的值等于 ele，则返回
+        if (node->data == ele) {
+            return node;
+        }
+        // 否则继续下一个结点的判断
+        node = node->next;
+    }
+    // 如果链表中不存在值等于 ele 的结点，则直接返回 NULL
+    return NULL;
+}
+
+/**
  * 在单链表的第 i 个结点（从 1 开始）前插入一个结点
  * @param list 单链表
  * @param i 节点序号，从 1 开始
@@ -334,6 +377,17 @@ int main() {
     int n2 = 5;
     createByTail(&list, nums2, n2);
     print(list);
+
+    // 查找单链表第 i 个结点
+    printf("\n通过单链表查找第 i 个结点：\n");
+    int i = 3;
+    LNode *iNode = findByNum(list, i);
+    printf("第 %d 个结点：%d\n", i, iNode->data);
+
+    // 查找单链表中等于指定值的结点
+    printf("\n查找单链表中等于指定值的结点：\n");
+    LNode *eleNode = findByEle(list, 33);
+    printf("eleNode 结点为：%d\n", eleNode->data);
 
     // 在链表指定位置插入新元素
     printf("\n在链表指定位置插入新元素：\n");

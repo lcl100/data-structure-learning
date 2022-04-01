@@ -25,6 +25,16 @@ public class LinkedListTest {
         list.createByTail(11, 22, 33, 44, 55);
         list.print();
 
+        // 查找单链表指定位置的结点
+        System.out.println("\n查找单链表指定位置的结点：");
+        LNode iNode = list.findByNum(3);
+        System.out.println("iNode=" + iNode.data);
+
+        // 查找单链表等于指定值的结点
+        System.out.println("\n查找单链表等于指定值的结点：");
+        LNode eleNode = list.findByEle(33);
+        System.out.println("eleNode=" + eleNode.data);
+
         // 在链表指定位置插入新元素
         System.out.println("\n在链表指定位置插入新元素：");
         list.insert(1, 999);
