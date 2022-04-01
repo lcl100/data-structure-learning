@@ -41,6 +41,21 @@ LNode* findKthNode(LNode* list,int k){
 }
 ```
 
+还可以这样：
+```c 
+LNode *findKthNode(LNode *list, int k) {
+    // 注意，从头结点开始，才能走 k 步
+    LNode *node = list;
+    while (k > 0) {
+        node = node->next;
+        k--;
+    }
+
+    // 返回 node 结点
+    return node == list ? NULL : node;
+}
+```
+
 完整代码：
 
 ```c
@@ -98,7 +113,7 @@ LNode *createByTail(LNode **list, int nums[], int n) {
 }
 
 /**
- * 得到链表的尾节点
+ * 得到链表的第 k 个节点
  * @param list 带头节点的单链表
  * @param k 链表中节点序号，从 1 开始
  * @return 如果找到则返回第 k 个节点，否则返回 NULL
