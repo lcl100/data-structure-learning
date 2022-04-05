@@ -290,7 +290,7 @@ void print(SLNode *list) {
     printf("[");
     while (i != 0) {
         printf("%d", list[i].data);
-        if (list[list[i].cur].data != 0) {
+        if (list[list[i].cur].cur != 0) {
             printf(", ");
         }
         i = list[i].cur;

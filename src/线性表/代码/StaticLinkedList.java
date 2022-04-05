@@ -285,7 +285,7 @@ public class StaticLinkedList {
         String str = "[";
         while (i != 0) {
             str += list[i].data;
-            if (list[list[i].cur].data != 0) {
+            if (list[list[i].cur].cur != 0) {
                 str += ", ";
             }
             // 继续下一个数据节点
