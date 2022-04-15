@@ -1,5 +1,10 @@
 package 栈.代码;
 
+/**
+ * @author lcl100
+ * @desc 顺序栈测试类
+ * @create 2022-04-12 21:59
+ */
 public class SeqStackTest {
     public static void main(String[] args) throws Exception {
         // 声明一个栈
