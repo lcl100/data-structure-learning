@@ -56,6 +56,11 @@ public class CircularQueueTest {
         front = queue.getFront();
         System.out.println(front);
 
+        // 再将元素入队
+        System.out.println("\n再将元素入队：");
+        queue.enQueue(55);
+        queue.print();
+
         // 队尾元素
         System.out.println("\n队尾元素：");
         int rear;
