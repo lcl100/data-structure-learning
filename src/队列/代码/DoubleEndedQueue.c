@@ -53,6 +53,7 @@ int isEmpty(DoubleEndedQueue deque) {
  * @return 如果双端队列已满则返回 1，否则返回 0 表示队列非满
  */
 int isFull(DoubleEndedQueue deque) {
+    // 判断条件跟循环队列一样，因为底层就是循环队列
     if ((deque.back + 1) % MAXSIZE == deque.front) {
         return 1;
     } else {
