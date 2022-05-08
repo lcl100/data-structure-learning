@@ -97,7 +97,7 @@ void enQueue(LinkedQueue **queue, int ele) {
  * @return 如果链队列为空则不能出队则返回 0 表示出队失败；否则返回 1 表示出队成功
  */
 int deQueue(LinkedQueue **queue, int *ele) {
-    // 0.参数校验，如果队空则不能入队
+    // 0.参数校验，如果队空则不能出队
     if ((*queue)->front == NULL || (*queue)->rear == NULL) {
         return 0;
     }
