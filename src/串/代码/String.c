@@ -199,7 +199,7 @@ int concat(String *str, String s1, String s2) {
         str->ch[s1.length + i] = *(s2.ch + i);
     }
     // 1.4 为连接后的串指定长度
-    str->length = s1.length + s2.length + 1;
+    str->length = s1.length + s2.length;
     // 1.5 返回 1 表示连接成功
     return 1;
 }
