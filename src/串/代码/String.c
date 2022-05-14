@@ -277,7 +277,7 @@ int index(String str, String substr) {
         return i - j;
     } else {
         // 如果不相等，则表示子串不存在于主串中，在返回标记 0
-        return 0;
+        return '\0';
     }
 }
 
